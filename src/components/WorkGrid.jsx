@@ -4,13 +4,15 @@ import { Clapperboard, FileText, Palette, Camera, ExternalLink } from 'lucide-re
 const cards = [
   {
     title: 'Filmmaking',
-    subtitle: 'Shorts • Reels • Direction',
+    subtitle: 'Short film • Reels • Direction',
     href: 'https://filmmaking.ayan.example.com',
     accent: 'from-cyan-300 to-blue-500',
     description:
       'Narrative shorts blending surreal noir with emotive pacing. Direction, cinematography, and edit experiments.',
     tags: ['Direction', 'Edit', 'Cinematography', 'Color'],
-    Icon: Clapperboard
+    Icon: Clapperboard,
+    image:
+      'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=80'
   },
   {
     title: 'Scriptwriting',
@@ -20,7 +22,9 @@ const cards = [
     description:
       'Character-first stories, minimal dialogue, and visual metaphors. Treatments, beat sheets, and drafts.',
     tags: ['Spec', 'Beats', 'Dialogue', 'Structure'],
-    Icon: FileText
+    Icon: FileText,
+    image:
+      'https://images.unsplash.com/photo-1513185041617-8ab03f83d6c5?auto=format&fit=crop&w=1400&q=80'
   },
   {
     title: 'Painting',
@@ -30,7 +34,9 @@ const cards = [
     description:
       'Noir palettes and neon accents across abstract portraits and brutalist shapes on textured canvas.',
     tags: ['Acrylic', 'Ink', 'Surreal', 'Noir'],
-    Icon: Palette
+    Icon: Palette,
+    image:
+      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80'
   },
   {
     title: 'Photography',
@@ -40,7 +46,9 @@ const cards = [
     description:
       'Grain, vignette, and long exposure studies exploring light as a character in urban spaces.',
     tags: ['35mm', 'Long Exposure', 'Monochrome', 'Cyan Glow'],
-    Icon: Camera
+    Icon: Camera,
+    image:
+      'https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1400&q=80'
   }
 ]
 
@@ -54,34 +62,35 @@ function WorkGrid() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {cards.map(({ title, subtitle, href, accent, description, tags, Icon }) => (
+          {cards.map(({ title, subtitle, href, accent, description, tags, Icon, image }) => (
             <a
               key={title}
               href={href}
               target="_blank"
               rel="noreferrer noopener"
               aria-label={`${title} — ${subtitle}. Open in new tab.`}
-              className="group relative overflow-hidden rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 p-6 aspect-[4/5] flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60 transition-transform duration-300 will-change-transform hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 p-4 aspect-[4/5] flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60 transition-transform duration-300 will-change-transform hover:-translate-y-1"
             >
-              {/* Glow backdrop */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className={`absolute -inset-12 bg-gradient-to-br ${accent} opacity-20 blur-2xl`} />
-              </div>
-
-              {/* Top: Icon + Subtitle */}
-              <div className="relative flex items-start justify-between">
-                <div className="h-12 w-12 rounded-lg border border-white/20 bg-white/10 grid place-items-center shadow-[0_0_30px_0_rgba(155,231,255,0.25)] text-cyan-100">
-                  <Icon className="h-6 w-6" aria-hidden />
+              {/* Image banner */}
+              <div className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-black/40 aspect-[16/9]">
+                <img
+                  src={image}
+                  alt=""
+                  loading="lazy"
+                  className="h-full w-full object-cover scale-105 transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className={`pointer-events-none absolute inset-0 bg-gradient-to-t ${accent} opacity-20 mix-blend-screen`} />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-transparent/40 to-transparent" />
+                <div className="absolute left-3 top-3 h-10 w-10 rounded-lg border border-white/20 bg-white/10 grid place-items-center text-cyan-100">
+                  <Icon className="h-5 w-5" aria-hidden />
                 </div>
-                <span className="text-[11px] font-medium tracking-wide text-white/60 px-2 py-1 rounded-md border border-white/10 bg-white/5">
-                  {subtitle}
-                </span>
               </div>
 
-              {/* Title */}
-              <h3 className="mt-5 text-xl font-semibold text-white leading-tight">
-                {title}
-              </h3>
+              {/* Title + subtitle */}
+              <div className="mt-4">
+                <h3 className="text-lg font-semibold text-white leading-tight">{title}</h3>
+                <p className="mt-1 text-xs font-medium tracking-wide text-white/60">{subtitle}</p>
+              </div>
 
               {/* Description */}
               <p className="mt-2 text-sm text-white/70 group-hover:text-white/80 transition-colors">
@@ -89,7 +98,7 @@ function WorkGrid() {
               </p>
 
               {/* Tags */}
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-3 flex flex-wrap gap-2">
                 {tags.map((t) => (
                   <span
                     key={t}
@@ -101,7 +110,7 @@ function WorkGrid() {
               </div>
 
               {/* Bottom CTA */}
-              <div className="mt-auto pt-4 flex items-center justify-between">
+              <div className="mt-auto pt-3 flex items-center justify-between">
                 <span className="text-sm text-white/70 group-hover:text-white transition-colors">Explore the collection</span>
                 <span className="inline-flex items-center gap-1 text-cyan-200 group-hover:text-white transition-colors">
                   <ExternalLink className="h-4 w-4" aria-hidden />
