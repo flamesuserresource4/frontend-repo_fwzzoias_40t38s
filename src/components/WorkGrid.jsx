@@ -5,7 +5,7 @@ const cards = [
   {
     title: 'Filmmaking',
     subtitle: 'Short film • Reels • Direction',
-    href: 'https://filmmaking.ayan.example.com',
+    href: 'https://film.ayandas.art/',
     accent: 'from-cyan-300 to-blue-500',
     description:
       'Narrative shorts blending surreal noir with emotive pacing. Direction, cinematography, and edit experiments.',
@@ -17,7 +17,7 @@ const cards = [
   {
     title: 'Scriptwriting',
     subtitle: 'Spec • Microfiction • Screenplays',
-    href: 'https://script.ayan.example.com',
+    href: 'https://script.ayandas.art/',
     accent: 'from-cyan-200 to-teal-400',
     description:
       'Character-first stories, minimal dialogue, and visual metaphors. Treatments, beat sheets, and drafts.',
@@ -29,7 +29,7 @@ const cards = [
   {
     title: 'Painting',
     subtitle: 'Ink • Mixed Media • Brutalist Forms',
-    href: 'https://painting.ayan.example.com',
+    href: 'https://paint.ayandas.art/',
     accent: 'from-teal-300 to-cyan-400',
     description:
       'Noir palettes and neon accents across abstract portraits and brutalist shapes on textured canvas.',
@@ -41,7 +41,7 @@ const cards = [
   {
     title: 'Photography',
     subtitle: 'Street • Portrait • Low-light',
-    href: 'https://photography.ayan.example.com',
+    href: 'https://photography.ayandas.art/',
     accent: 'from-blue-300 to-cyan-300',
     description:
       'Grain, vignette, and long exposure studies exploring light as a character in urban spaces.',
