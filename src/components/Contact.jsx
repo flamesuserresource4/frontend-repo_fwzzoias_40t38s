@@ -27,17 +27,17 @@ function Contact() {
   return (
     <section id="contact" className="py-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="border-2 border-white/20 p-8 sm:p-10 bg-[#0b0b0d]">
-          <h2 className="text-3xl font-black uppercase tracking-tight text-white mb-6">Contact</h2>
+        <div className="rounded-2xl border border-white/10 p-8 sm:p-10 bg-[#0b0b0d]/60 backdrop-blur">
+          <h2 className="text-3xl font-semibold tracking-tight text-white mb-6">Contact</h2>
 
           {submitted ? (
-            <div role="status" className="text-cyan-100 font-semibold uppercase">
+            <div role="status" className="text-cyan-100">
               Thanks — your message is staged. This is a demo, so no email is sent.
             </div>
           ) : (
             <form onSubmit={onSubmit} noValidate className="grid grid-cols-1 gap-6">
               <div>
-                <label htmlFor="name" className="block text-xs font-black uppercase text-white/80">Name</label>
+                <label htmlFor="name" className="block text-sm text-white/80">Name</label>
                 <input
                   id="name"
                   name="name"
@@ -45,7 +45,7 @@ function Contact() {
                   autoComplete="name"
                   value={form.name}
                   onChange={onChange}
-                  className="mt-2 w-full bg-transparent border-2 border-white/30 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-0 focus:border-white"
+                  className="mt-2 w-full bg-white/[0.02] border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-cyan-300/30 focus:border-white/20"
                   placeholder="Your name"
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? 'name-error' : undefined}
@@ -54,7 +54,7 @@ function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-xs font-black uppercase text-white/80">Email</label>
+                <label htmlFor="email" className="block text-sm text-white/80">Email</label>
                 <input
                   id="email"
                   name="email"
@@ -62,7 +62,7 @@ function Contact() {
                   autoComplete="email"
                   value={form.email}
                   onChange={onChange}
-                  className="mt-2 w-full bg-transparent border-2 border-white/30 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-0 focus:border-white"
+                  className="mt-2 w-full bg-white/[0.02] border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-cyan-300/30 focus:border-white/20"
                   placeholder="you@example.com"
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? 'email-error' : undefined}
@@ -71,14 +71,14 @@ function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-xs font-black uppercase text-white/80">Message</label>
+                <label htmlFor="message" className="block text-sm text-white/80">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
                   value={form.message}
                   onChange={onChange}
-                  className="mt-2 w-full bg-transparent border-2 border-white/30 px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-0 focus:border-white resize-y"
+                  className="mt-2 w-full bg-white/[0.02] border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-cyan-300/30 focus:border-white/20 resize-y"
                   placeholder="Tell me about your project…"
                   aria-invalid={!!errors.message}
                   aria-describedby={errors.message ? 'message-error' : undefined}
@@ -89,7 +89,7 @@ function Contact() {
               <div>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-[#0b0b0d] font-black uppercase tracking-wider px-6 py-3 border-2 border-white shadow-[6px_6px_0_0_#9be7ff] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[4px_4px_0_0_#9be7ff] transition-transform"
+                  className="inline-flex items-center justify-center w-full sm:w-auto bg-gradient-to-r from-white to-white/90 text-[#0b0b0d] font-semibold tracking-tight px-6 py-3 rounded-lg border border-white/10 shadow-sm hover:from-white/95 active:translate-y-px transition"
                 >
                   Send Message
                 </button>
