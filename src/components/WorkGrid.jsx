@@ -56,9 +56,9 @@ function WorkGrid() {
   return (
     <section id="work" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">Selected Work</h2>
-          <p className="hidden sm:block text-white/60 text-sm">Hover to preview aura • Press Enter to open</p>
+        <div className="flex items-baseline justify-between mb-8">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-white">Selected Work</h2>
+          <p className="hidden sm:block text-white/60 text-xs uppercase font-semibold">Hover for details</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -69,31 +69,31 @@ function WorkGrid() {
               target="_blank"
               rel="noreferrer noopener"
               aria-label={`${title} — ${subtitle}. Open in new tab.`}
-              className="group relative overflow-hidden rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 p-4 aspect-[4/5] flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60 transition-transform duration-300 will-change-transform hover:-translate-y-1"
+              className="group relative overflow-hidden border-2 border-white/20 p-4 aspect-[4/5] flex flex-col focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-cyan-300/50 transition-transform duration-200 will-change-transform hover:-translate-y-1 bg-[#0b0b0d]"
             >
               {/* Image banner */}
-              <div className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-black/40 aspect-[16/9]">
+              <div className="relative w-full overflow-hidden border-2 border-white/20 bg-black/60 aspect-[16/9]">
                 <img
                   src={image}
                   alt=""
                   loading="lazy"
-                  className="h-full w-full object-cover scale-105 transition-transform duration-500 group-hover:scale-110"
+                  className="h-full w-full object-cover scale-105 transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className={`pointer-events-none absolute inset-0 bg-gradient-to-t ${accent} opacity-20 mix-blend-screen`} />
+                <div className={`pointer-events-none absolute inset-0 bg-gradient-to-t ${accent} opacity-20`} />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b0b0d] via-transparent/40 to-transparent" />
-                <div className="absolute left-3 top-3 h-10 w-10 rounded-lg border border-white/20 bg-white/10 grid place-items-center text-cyan-100">
+                <div className="absolute left-3 top-3 h-10 w-10 grid place-items-center bg-white text-[#0b0b0d] font-black text-xs border-2 border-white shadow-[3px_3px_0_0_#9be7ff]">
                   <Icon className="h-5 w-5" aria-hidden />
                 </div>
               </div>
 
               {/* Title + subtitle */}
               <div className="mt-4">
-                <h3 className="text-lg font-semibold text-white leading-tight">{title}</h3>
-                <p className="mt-1 text-xs font-medium tracking-wide text-white/60">{subtitle}</p>
+                <h3 className="text-lg font-black text-white leading-tight uppercase">{title}</h3>
+                <p className="mt-1 text-[11px] font-semibold tracking-wide text-white/70 uppercase">{subtitle}</p>
               </div>
 
               {/* Description */}
-              <p className="mt-2 text-sm text-white/70 group-hover:text-white/80 transition-colors">
+              <p className="mt-3 text-sm text-white/80">
                 {description}
               </p>
 
@@ -102,7 +102,7 @@ function WorkGrid() {
                 {tags.map((t) => (
                   <span
                     key={t}
-                    className="text-[11px] leading-4 text-cyan-100/80 bg-white/5 border border-white/10 rounded-full px-2.5 py-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] group-hover:border-cyan-300/40 group-hover:text-cyan-100 transition-colors"
+                    className="text-[10px] leading-4 text-white font-semibold uppercase bg-transparent border-2 border-white/30 px-2 py-1"
                   >
                     {t}
                   </span>
@@ -111,15 +111,11 @@ function WorkGrid() {
 
               {/* Bottom CTA */}
               <div className="mt-auto pt-3 flex items-center justify-between">
-                <span className="text-sm text-white/70 group-hover:text-white transition-colors">Explore the collection</span>
-                <span className="inline-flex items-center gap-1 text-cyan-200 group-hover:text-white transition-colors">
+                <span className="text-xs font-semibold uppercase text-white/80">Open</span>
+                <span className="inline-flex items-center gap-1 text-cyan-200">
                   <ExternalLink className="h-4 w-4" aria-hidden />
                 </span>
               </div>
-
-              {/* Borders and inner sheen */}
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-white/10 group-hover:ring-cyan-300/40 transition-all" />
-              <div className="absolute inset-0 rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]" aria-hidden />
             </a>
           ))}
         </div>
