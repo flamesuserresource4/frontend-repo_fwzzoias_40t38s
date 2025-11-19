@@ -1,5 +1,5 @@
 import React from 'react'
-import { Instagram, Vimeo, Behance, Linkedin } from 'lucide-react'
+import { Instagram, Video, Palette, Linkedin } from 'lucide-react'
 
 function Footer() {
   return (
@@ -13,10 +13,10 @@ function Footer() {
                 <Instagram size={18} />
               </a>
               <a href="https://vimeo.com" aria-label="Vimeo" className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10">
-                <Vimeo size={18} />
+                <Video size={18} />
               </a>
-              <a href="https://behance.net" aria-label="Behance" className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10">
-                <Behance size={18} />
+              <a href="https://behance.net" aria-label="Portfolio" className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10">
+                <Palette size={18} />
               </a>
               <a href="https://linkedin.com" aria-label="LinkedIn" className="p-2 rounded-lg bg-white/5 border border-white/10 text-white/80 hover:text-white hover:bg-white/10">
                 <Linkedin size={18} />
